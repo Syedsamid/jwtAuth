@@ -36,7 +36,7 @@ router.post("/register",async(req,res)=>{
 
         await userModel.create(userdata)
 
-        res.status(200).json({msg:"user add hogaya"})
+        res.status(200).json({msg:"new user added"})
 
     } catch (error) {
         console.log(error);
@@ -51,6 +51,7 @@ router.get("/getallusers",async(req,res)=>{
         let allUsers = await userModel.find({})
         res.status(200).json(allUsers)
     } catch (error) {
+        
         console.log(error);
         res.status(500).json({message: error})
     }
